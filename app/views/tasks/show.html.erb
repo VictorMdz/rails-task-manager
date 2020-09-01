@@ -1,0 +1,9 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+  <%= form_for(@task) do |f|%>
+    <p><%= f.check_box :completed %> <%= @task.completed ? "This task is completed" : "This task is not completed yet" %></p>
+  <% end %>
+
+<%= link_to "Go back", tasks_path(@tasks) %>
+

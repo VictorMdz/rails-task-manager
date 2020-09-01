@@ -1,0 +1,14 @@
+<h1>List of task</h1>
+
+
+  <% @tasks.each do |task| %>
+    <%= form_for(task) do |f| %>
+      <p><%= f.check_box :completed %> <%= link_to task.title, task_path(task) %>
+      <%= link_to "Delete",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+      </p>
+    <% end %>
+  <% end %>
+
